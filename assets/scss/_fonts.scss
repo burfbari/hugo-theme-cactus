@@ -4,3 +4,11 @@
   font-display: swap;
   src: local("JetBrains Mono"), local("JetBrains-Mono"), url("../lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2") format("woff2"), url("../lib/JetBrainsMono/web/woff/JetBrainsMono-Regular.woff") format("woff"), url("../lib/JetBrainsMono/web/eot/JetBrainsMono-Regular.eot") format("embedded-opentype"), url("../lib/JetBrainsMono/ttf/JetBrainsMono-Regular.ttf") format("truetype");
 };
+
+@font-face {
+  font-family: 'archiaregular';
+  src: local("archiaregular"), url("../lib/fonts/archia-regular-webfont.woff2") format("woff2"), url("../lib/fonts/archia-regular-webfont.woff") format("woff"), url("../lib/fonts/archia-regular-webfont.eot") format("embedded-opentype"), url("../lib/fonts/archia-regular-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+};
