@@ -38,6 +38,25 @@
   </section>
 
   <section id="writing">
+
+    {{ if (isset .Site.Params "pinned") }}
+      <span class="h1">Pinned</span>
+
+      {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }}
+      {{ $pinnedPosts := (sort ( where site.RegularPages "Type" "in" site.Params.mainSections ) "Date" "desc") }}
+      
+      <ul class="post-list">
+        {{ range (.Paginate $pinnedPosts).Pages }}
+          {{ if (eq .Params.pinned true) }}
+            <li class="post-item">
+              <div class="meta"><time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format $dataFormat }}</time></div>
+              <span><a href="{{ .Permalink }}">{{ if .Title }} {{- .Title -}} {{ else }} {{- print "Untitled" -}}{{ end }}</a></span>
+            </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    {{ end }}
+
     <span class="h1"><a href="{{ .Site.Params.mainSection | absURL }}">{{ .Site.Params.mainSectionTitle | default "Writings" }}</a></span>
     {{ if (and (and (isset .Site.Params "tagsoverview") (eq .Site.Params.tagsOverview true)) (gt (len .Site.Taxonomies.tags) 0)) }}
     <span class="h2">Topics</span>
