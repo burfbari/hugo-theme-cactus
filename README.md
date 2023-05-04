@@ -133,6 +133,25 @@ weight = 4
   projectsUrl = "https://github.com/monkeyWzr"
 ```
 
+## Feature added in burfbari-cactus
+
+### Support for Pinned Post
+
+A user can mark a post as pinned after which the post will be shown on the top of posts list on the home page. to enable the feature the following setting would go in 
+
+```toml
+# config.toml
+
+[params]
+  pinned = true
+```
+
+Additionally, user would need to add a param in the post (along with Title and Date)
+
+```
+  pinned = true
+```
+
 Projects section will not be shown if no data file is detected. See [Projects list](#projects-list) below.
 
 ### Projects list
