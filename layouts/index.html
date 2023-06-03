@@ -49,7 +49,7 @@
         {{ $pinnedPosts := (sort ( where site.RegularPages "Type" "in" site.Params.mainSections ) "Date" "desc") }}
         
         <ul class="post-list">
-          {{ range (.Paginate $pinnedPosts).Pages }}
+          {{ range $pinnedPosts }}
             {{ if (eq .Params.pinned true) }}
               <li class="post-item">
                 <div class="meta"><time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format $dataFormat }}</time></div>
